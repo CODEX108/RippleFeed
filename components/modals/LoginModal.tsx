@@ -59,8 +59,8 @@ const LoginModal = () => {
   )
 
   const footerContent = (
-    <div className="text-neutral-400 text-center mt-4">
-      <p>First time using Twitter?
+    <div className="text-neutral-400 text-center mt-4 font-bold">
+      <p>First time using RippleFeed?
         <span 
           onClick={onToggle} 
           className="

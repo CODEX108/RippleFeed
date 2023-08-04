@@ -11,6 +11,7 @@ interface SidebarItemProps {
   icon: IconType;
   href?: string;
   onClick?: () => void;
+  //to protect other tabs
   auth?: boolean;
   alert?: boolean;
 }
