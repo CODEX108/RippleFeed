@@ -5,7 +5,8 @@ import { format } from "date-fns";
 import Button from "../Button";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useUser from "@/hooks/useUser";
-import { it } from "node:test";
+import useEditModal from "@/hooks/useEditModal";
+import { PiSpiralFill } from "react-icons/pi";
 
 interface UserBioProps {
     userId: string;
@@ -14,6 +15,7 @@ interface UserBioProps {
 const UserBio: React.FC<UserBioProps> = ({ userId }) => {
     const { data: currentUser } = useCurrentUser();
     const { data: fetchedUser } = useUser(userId);
+    const editModal = useEditModal();
 
     const createdAt = useMemo(() => {
         if (!fetchedUser?.createdAt) return null;
@@ -24,7 +26,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
         <div className="border-b-[1px] border-neutral-800 pb-4">
             <div className="flex justify-end p-2">
                 {currentUser?.id === userId ? (
-                    <Button label="Edit Profile" onClick={() => { }} />
+                    <Button label="Edit Profile" onClick={editModal.onOpen} />
                 ) : (
                     <Button label="Follow" secondary onClick={() => { }} />
                 )}
