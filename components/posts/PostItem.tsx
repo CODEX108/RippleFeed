@@ -1,21 +1,20 @@
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
-import { formatDistance, formatDistanceToNowStrict } from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
+import { log } from "console";
 
 interface PostItemProps {
     userId?: string;
     data?: Record<string, any>
 }
 
-const PostItem: React.FC<PostItemProps> = ({
-    userId,
-    data = {}
-}) => {
+const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
     const router = useRouter();
-    const LoginModal = useLoginModal();
+    const loginModal = useLoginModal();
+
     const { data: currentUser } = useCurrentUser();
 
     const goToUser = useCallback((ev: any) => {
@@ -28,10 +27,8 @@ const PostItem: React.FC<PostItemProps> = ({
     }, [router, data.id]);
 
     const onLike = useCallback((event: any) => {
-        event.stopPropagation();
-        console.log('like');
-        LoginModal.onOpen();
-    }, [LoginModal]);
+        loginModal.onOpen();
+    }, [loginModal]);
 
     const createdAt = useMemo(() => {
         if (!data?.createdAt) {
@@ -39,7 +36,7 @@ const PostItem: React.FC<PostItemProps> = ({
         }
 
         return formatDistanceToNowStrict(new Date(data.createdAt));
-    }, [data?.createdAt]);
+    }, [data?.createdAt])
 
     return (
         <div
@@ -53,13 +50,34 @@ const PostItem: React.FC<PostItemProps> = ({
           transition
         ">
             <div className="flex items-start gap-3 flex-row">
-                <Avatar userId={data.user.id}/>
-                </div>
-                <div className="flex flex-row items-center gap-2">
-                    <p className="text-white font-semibold cursor-pointer hover:underline">
-                        {data.user.name}
-                    </p>
-                </div>
+                <Avatar userId={data.user.id} />
+            </div>
+            <div className="flex flex-row items-center gap-2">
+                <p
+                    onClick={goToUser}
+                    className="
+                text-white 
+                font-semibold 
+                cursor-pointer 
+                hover:underline
+            ">
+                    {data.user.name}
+                </p>
+                <span
+                    onClick={goToUser}
+                    className="
+                text-neutral-500
+                cursor-pointer
+                hover:underline
+                hidden
+                md:block
+            ">
+                    @{data.user.username}
+                </span>
+                <span className="text-neutral-500 text-sm">
+                    {createdAt}
+                </span>
+            </div>
         </div>
     )
 }
