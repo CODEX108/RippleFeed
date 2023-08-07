@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
 import { log } from "console";
+import { AiOutlineHeart, AiOutlineMessage } from "react-icons/ai";
 
 interface PostItemProps {
     userId?: string;
@@ -71,12 +72,28 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
                 hover:underline
                 hidden
                 md:block
+                text-indigo-500
             ">
                     @{data.user.username}
                 </span>
                 <span className="text-neutral-500 text-sm">
                     {createdAt}
                 </span>
+            </div>
+            <div className="text-white mt-1">
+                {data.body}
+            </div>
+            <div className="flex flex-row items-center mt-3 gap-10">
+            <div className="flex flex-row items-center text-neutral-500 gap-2 cursor-pointer transition hover:text-indigo-600 m-2">
+                <AiOutlineMessage size={20}/>
+                <p>{data.comments?.length || 0}</p>
+            </div>
+            <div
+            onClick={onLike}
+            className="flex flex-row items-center text-neutral-500 gap-2 cursor-pointer transition hover:text-red-500 m-2">
+                <AiOutlineHeart size={20}/>
+                <p>{data.comments?.length || 0}</p>
+            </div>
             </div>
         </div>
     )
