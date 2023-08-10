@@ -1,3 +1,11 @@
+## Tech Stack
+- Next JS
+- Typescript
+- Tailwind CSS
+- MongoDB Atlas
+- Prisma
+- *deployed on* Vercel 
+
 ## Preview
 
 ![image](https://github.com/CODEX108/RippleFeed/assets/82377810/d698031d-ae6b-480d-b382-691be9bef1d5)
