@@ -1,7 +1,8 @@
 import { signOut } from 'next-auth/react';
 import { BiLogOut } from 'react-icons/bi';
+import { HiOutlineSpeakerphone } from 'react-icons/hi';
 import { BsHouseFill, BsBellFill } from 'react-icons/bs';
-import { FaUser } from 'react-icons/fa';
+import { GiCaptainHatProfile,GiShipWheel } from 'react-icons/gi';
 
 import useCurrentUser from '@/hooks/useCurrentUser';
 
@@ -14,19 +15,19 @@ const Sidebar = () => {
 
   const items = [
     {
-      icon: BsHouseFill,
+      icon: GiShipWheel,
       label: 'Home',
       href: '/',
     },
     {
-      icon: BsBellFill,
+      icon: HiOutlineSpeakerphone,
       label: 'Notifications',
       href: '/notifications',
       auth: true,
       alert: currentUser?.hasNotification
     },
     {
-      icon: FaUser,
+      icon: GiCaptainHatProfile,
       label: 'Profile',
       href: `/users/${currentUser?.id}`,
       auth: true,
