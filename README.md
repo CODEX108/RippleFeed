@@ -15,3 +15,6 @@
 
 ![image](https://github.com/CODEX108/RippleFeed/assets/82377810/2d513213-d6b2-40f2-b7b8-904cab78d90f)
 
+<img src="https://github.com/CODEX108/RippleFeed/assets/82377810/afb6b986-3ada-4439-8115-61c166936013" height=650px width=300px/>
+<img src="https://github.com/CODEX108/RippleFeed/assets/82377810/c677a821-2a80-4d23-a495-f7c98047615f"  height=590px width=330px/>
+
