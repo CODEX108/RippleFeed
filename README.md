@@ -7,6 +7,8 @@
 
 #### Unleash ideas on *RippleFeed*, where messages create ripples, connecting minds💡. Discover diverse topics, fostering influential conversations💬. Experience a tranquil, clutter-free space, forging meaningful connections. Join now and make waves of influence 🌊.
 
+> ##### Take a dive here : https://ripple-feed.vercel.app/ And create a ripple O'Captain 👨🏻‍✈️
+
 ## Tech Stack
 - Next JS
 - Typescript
