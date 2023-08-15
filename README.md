@@ -1,3 +1,8 @@
+<div align=center>
+  <img src="https://github.com/CODEX108/RippleFeed/assets/82377810/d55f05ff-5e77-432a-b5f9-04121369fc0c" />
+ </div>
+
+
 ## Tech Stack
 - Next JS
 - Typescript
