@@ -2,6 +2,10 @@
   <img src="https://github.com/CODEX108/RippleFeed/assets/82377810/d55f05ff-5e77-432a-b5f9-04121369fc0c" />
  </div>
 
+## RippleFeed
+> *Create a wave or a ripple*
+
+#### Unleash ideas on *RippleFeed*, where messages create ripples, connecting minds💡. Discover diverse topics, fostering influential conversations💬. Experience a tranquil, clutter-free space, forging meaningful connections. Join now and make waves of influence 🌊.
 
 ## Tech Stack
 - Next JS
