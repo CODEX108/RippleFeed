@@ -19,7 +19,7 @@ const SidebarLogo = () => {
         hover:bg-opacity-10 
         cursor-pointer
     ">
-      <PiSpiralFill size={35} color="white" />
+      <PiSpiralFill size={31} color="white" />
     </div>
   );
 };
