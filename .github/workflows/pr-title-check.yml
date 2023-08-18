@@ -1,5 +1,26 @@
-pr_checks:
-  title:
-    - name: 'prefix_check'
-      regex: '^(fix|feat|test):'
-      message_if_not_matching: 'PR title must start with "fix:" or "feat:" or "test:"'
+name: PR Checks
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  title_check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check PR Title Prefix
+      id: title_check
+      uses: actions/github-script@v5
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const titleRegex = /^(fix|feat|test):/;
+          const prTitle = github.context.payload.pull_request.title;
+          
+          if (!titleRegex.test(prTitle)) {
+            core.setFailed('PR title must start with "fix:", "feat:", or "test:"');
+          }
+
